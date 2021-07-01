@@ -35,3 +35,27 @@ loginButton.addEventListener("click", onLoginBtnClick);
 **querySelector()**
 문자열 형태의 인자를 받는다.
 부르고 싶은 태그를 css 선택자와 같은 형태로 적어준다. class는 `.`을, id는 `#`을 앞에 붙여주면 되고, css에서처럼 띄어쓰기로 경로를 표시할 수 있다.
+
+### #4.1 Form Submission
+
+```html
+<body>
+  <form id="login-form">
+    <input
+      required
+      maxlength="15"
+      type="text"
+      placeholder="What is your name?"
+    />
+    <input type="submit" value="Log In" />
+  </form>
+  <script src="app.js"></script>
+</body>
+```
+
+- 입력하지 않았을 경우, JS에서 value를 불러온 후 `value === ""` 조건문을 이용해서 이름이 입력되지 않음을 확인하는 방법도 있지만 HTML이 가지고 있는 기본 기능을 사용하는 방법도 있다.
+- 태그에 `required`를 넣어주면 input에 값이 입력되지 않았을 경우 값을 입력하라는 알림창이 뜬다. 단, `form` 태그 내부의 input에서만 사용할 수 있다.
+- 길이의 제한을 두는 것도 마찬가지로 JS에서 확인하는 방법도 있지만 HTML이 가지고 있는 기능을 사용하는 방법이 더 간단하다.
+- `input` 태그에 `maxlength=10` 같은 방식으로 제한하고 싶은 길이를 넣으면 `input` 태그는 그 이상 문자를 입력할 수 없게된다.
+- `form` 태그 안의 데이터를 전송하려면 `input:submit` 태그가 필요하다.
+- 이 때 `form` 태그 내부에 `input` 태그가 하나만 있다면 엔터로도 전송할 수 있다.
