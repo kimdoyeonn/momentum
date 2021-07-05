@@ -84,3 +84,30 @@ loginForm.addEventListener("submit", onLoginSubmit);
 ### #4.3 Events part Two
 
 - a 태그에 `event.preventDefault()`는 새로운 페이지로 이동하는 것을 막는다.
+
+### #4.4 Getting Username
+
+- 사용자가 닉네임을 입력하고 submit하면 `form`이 사라지게 만들기
+  1. HTML 자체를 없애기
+  2. CSS를 이용해서 숨기기
+
+```js
+const greeting = document.querySelector("#greeting");
+
+const HIDDEN_CLASSNAME = "hidden";
+
+function onLoginSubmit(event) {
+  event.preventDefault(); // 기본동작이 실행되지 않게 막아줌(새로고침)
+  loginForm.classList.add(HIDDEN_CLASSNAME); // 유저네임을 변수로 저장
+
+  const username = loginInput.value; // hidden이라는 class name을 추가해서 form을 숨겨주고
+  greeting.innerText = `Hello ${username}`; // 변수명을 h1에 넣어줌
+  greeting.classList.remove(HIDDEN_CLASSNAME);
+}
+```
+
+- 유저네임을 입력받아 submit 버튼이 눌리면 submit의 기본동작인 새로고침이 막히고(`preventDefault()`) 입력 받은 form을 숨김
+- form을 숨기면서 `h1`에 입력받은 유저네임을 넣고 class `hidden`을 지워서 가려져 있던 `h1`을 보이게 만듦
+- 문자열과 변수를 합치는 방법
+  1. "Hello " + username
+  2. `Hello ${username}`
