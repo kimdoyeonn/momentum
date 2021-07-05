@@ -79,4 +79,8 @@ loginForm.addEventListener("submit", onLoginSubmit);
 - 이 때 브라우저가 function을 실행할 때 그냥 실행하는 것이 아니라 첫번째 argument에 기타 다른 정보들을 함께 넣고 실행한다. 사용하지 않아도 오류를 일으키지는 않음, 첫번째 인자를 넣으면 JS가 알아서 채워줌
   - 정보에는 이벤트를 발생시킨 주체, 이벤트가 발생한 시간, form 등등의 정보가 포함되어있다.
 - [`preventDefault()`](https://developer.mozilla.org/ko/docs/Web/API/Event/preventDefault) 이벤트의 전파를 막지 않고 그 이벤트를 취소함(여기선 새로고침이 막힘)
-  - 브라우저의 기본 동작을 막음
+  - 브라우저의 기본 동작을 막는 것
+
+### #4.3 Events part Two
+
+- a 태그에 `event.preventDefault()`는 새로운 페이지로 이동하는 것을 막는다.
