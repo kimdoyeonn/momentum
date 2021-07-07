@@ -111,3 +111,15 @@ function onLoginSubmit(event) {
 - 문자열과 변수를 합치는 방법
   1. "Hello " + username
   2. `Hello ${username}`
+
+### #5.0 Intervals
+
+```js
+function sayHello() {
+  console.log("hello");
+}
+setInterval(sayHello, 5000);
+```
+
+- 일정한 초마다 function을 실행함
+  ex) 5초마다 console에 "hello"를 출력
