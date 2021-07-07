@@ -123,3 +123,25 @@ setInterval(sayHello, 5000);
 
 - 일정한 초마다 function을 실행함
   ex) 5초마다 console에 "hello"를 출력
+
+### #5.1 Timeouts and Dates
+
+```js
+setTimeout(sayHello, 5000);
+```
+
+- 정해진 초 후에 실행됨
+
+```js
+const clock = document.querySelector("h2#clock");
+
+function getClock() {
+  const date = new Date();
+  clock.innerText = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+}
+
+getClock(); // 최초 실행시 1초 후부터 시간이 표시되기 때문에 처음부터 시간이 표시되도록 하기 위해 한번 실행해줌
+setInterval(getClock, 1000);
+```
+
+- 실시간으로 갱신되는 시계
