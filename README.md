@@ -154,3 +154,19 @@ setInterval(getClock, 1000);
 
 - 2글자가 되지 않을 경우 "0"을 앞에 추가해줌
 - 시, 분, 초가 0 ~ 9일 때 두 글자로 표현되도록 하기 위해 사용
+
+## QUOTES AND BACKGROUND
+
+### #6.0 Quotes
+
+```js
+const quote = document.querySelector("#quote span:first-child");
+const author = document.querySelector("#quote span:last-child");
+
+const todayQuote = quotes[Math.floor(Math.random() * quotes.length)];
+console.log(todayQuote);
+quote.innerText = todayQuote.quote;
+author.innerText = todayQuote.author;
+```
+
+- 정해놓은 랜덤 배열에서 랜덤으로 명언을 골라 화면에 출력되도록 만듦
