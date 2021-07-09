@@ -1,5 +1,14 @@
 # Momentum
 
+## Challenge CheckList
+
+- [ ] Clock.
+- [ ] Username (with localStorage).
+- [ ] To Do List (with localStorage)
+- [ ] Random Background Image.
+- [ ] Weather with Geolocation.
+- [ ] Make pretty CSS 💖
+
 ## LOGIN
 
 ### #4.0 Input Values
@@ -111,6 +120,15 @@ function onLoginSubmit(event) {
 - 문자열과 변수를 합치는 방법
   1. "Hello " + username
   2. `Hello ${username}`
+
+### #4.5 Saving Username
+
+- localStorage
+  - 브라우저가 정보를 저장, ex. 유튜브에 음량조절을 하고 새로고침을 하면 음량을 사용자가 설정한대로 유지
+  - 모멘템에선 사용자 이름을 매번 물어보지 않고 저장하는데에 사용
+  - `localStorage.setItem(key, value)`
+  - `localStorage.getItem(key)`
+  - `localStorage.removeItem(key)`
 
 ### #5.0 Intervals
 
