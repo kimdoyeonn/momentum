@@ -130,6 +130,13 @@ function onLoginSubmit(event) {
   - `localStorage.getItem(key)`
   - `localStorage.removeItem(key)`
 
+### #4.6 Loading Username
+
+- 이미 저장된 `username`이 있을 경우 저장된 `username`을 사용하고, input 부분을 보여주지 않도록 변경
+- 여러번 반복해서 사용하는 문자열은 오타의 가능성이 있기 때문에 변수로 만들어서 한번만 작성하는 것이 좋다.
+- localStorage에 username이 없을 경우 input을 보여주고 username을 입력받아서 화면에 username과 인사말을 띄워주고
+- localStorage에 username이 있을 경우 input을 보여주지 않고 저장된 username과 인사말을 띄워준다.
+
 ### #5.0 Intervals
 
 ```js
