@@ -149,6 +149,8 @@ setInterval(sayHello, 5000);
 - 일정한 초마다 function을 실행함
   ex) 5초마다 console에 "hello"를 출력
 
+## CLOCK
+
 ### #5.1 Timeouts and Dates
 
 ```js
