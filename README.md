@@ -197,3 +197,21 @@ author.innerText = todayQuote.author;
 ```
 
 - 정해놓은 랜덤 배열에서 랜덤으로 명언을 골라 화면에 출력되도록 만듦
+
+### #6.1 Background
+
+- quotes를 랜덤으로 보여주는 것과 같은 방법을 사용하면 됨
+- 저장된 이미지들을 배열에 넣고, 인덱스를 랜덤으로 생성해서 불러옴
+- 불러온 이미지를 새로 생성한 `img` 태그애 넣고 body에 `appendChild(tag)`를 사용해서 넣어줌
+
+```js
+const images = ["0.jpg", "1.jpg", "2.jpg", "3.jpg"];
+
+const chosenImage = images[Math.floor(Math.random() * images.length)];
+
+const bgImage = document.createElement("img");
+
+bgImage.src = `img/${chosenImage}`;
+
+document.body.appendChild(bgImage);
+```
