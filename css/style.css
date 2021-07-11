@@ -40,6 +40,7 @@ h2 {
 
 h1 {
   font-size: 3rem;
+  text-shadow: 3px 3px 3px #3a3b30;
 }
 
 .login-form {
@@ -90,6 +91,7 @@ h1 {
 #todo-form input {
   padding-bottom: 5px;
   font-size: 1.3rem;
+  font-weight: 500;
   color: white;
   width: 80%;
   height: 35px;
@@ -149,6 +151,8 @@ ul li:hover {
 ul li span {
   font-size: 1.4rem;
   margin: 10px;
+  font-weight: 500;
+  text-shadow: 1px 1px 1px #3a3b30;
 }
 ul li button {
   float: right;
