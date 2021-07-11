@@ -223,3 +223,17 @@ document.body.appendChild(bgImage);
 - todo-form, todo-input, todo-list 만듦
 - input에 값을 넣고 엔터를 눌렀을 때 새로고침이 되지 않도록 만듦
 - 값을 넣고 엔터를 누르면 값을 다른 변수에 저장하고 input의 값이 사라짐
+
+### #7.1 Adding ToDos
+
+```js
+function paintToDo(newTodo) {
+  const li = document.createElement("li");
+  const span = document.createElement("span");
+  li.appendChild(span);
+  span.innerText = newTodo;
+  toDoList.appendChild(li);
+}
+```
+
+- input에 값을 입력하고 엔터를 눌렀을 때, input에서 값이 사라짐과 동시에 todo-list에 값이 `li span` 형태로 추가
