@@ -285,3 +285,20 @@ if (savedToDos) {
 - 페이지가 로드될 때 실행된다. localStorage에 todos 가 저장되어있는지 확인 후 `JSON.parse()`를 사용해 문자열에서 배열로 바꿈
 - 문자열로 바꾼 배열을 forEach를 사용해 모든 item에 `paintToDo`에 넘겨주어 화면에도 표시
 - 매번 빈 배열로 초기화되는 toDos 배열 때문에 새로고침 후 새로운 투두를 넣으면 이전 투두들이 덮어쓰기 되어지는 문제를 해결하기 위해 `JSON.parse()`로 얻은 배열을 toDos 배열에 덮어쓰기 시켜서 페이지가 로드될 때마다 localStorage의 값을 가지고 있게함
+
+### #7.6 Deleteing To Dos
+
+- js는 화면에서 todo를 지울 때 어떤 todo인지 알지만 localStorage는 몇번째인지 알 수 없다.
+- localStorage애서도 지우기 위해 각각의 todo에 `Date.now()`를 이용해서 id를 부여한다.
+
+```js
+function deleteToDo(event) {
+  const li = event.target.parentElement;
+  li.remove();
+  toDos = toDos.filter((todo) => todo.id !== parseInt(li.id));
+  saveToDos();
+}
+```
+
+- [filter](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)를 사용하여 삭제 버튼이 눌린 todo를 제외한 배열을 새로 만들어서 toDos에 넣어줌
+- 새로 업데이트된 toDos를 localStorage에 저장
