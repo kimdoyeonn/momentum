@@ -215,3 +215,11 @@ bgImage.src = `img/${chosenImage}`;
 
 document.body.appendChild(bgImage);
 ```
+
+## TO DO LIST
+
+### #7.0 Setup
+
+- todo-form, todo-input, todo-list 만듦
+- input에 값을 넣고 엔터를 눌렀을 때 새로고침이 되지 않도록 만듦
+- 값을 넣고 엔터를 누르면 값을 다른 변수에 저장하고 input의 값이 사라짐
