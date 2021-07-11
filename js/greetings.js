@@ -7,16 +7,16 @@ const USERNAME_KEY = "username";
 
 function onLoginSubmit(event) {
   event.preventDefault(); // 기본동작이 실행되지 않게 막아줌(새로고침)
-  loginForm.classList.add(HIDDEN_CLASSNAME); // 유저네임을 변수로 저장
+  loginForm.classList.add(HIDDEN_CLASSNAME);
 
-  const username = loginInput.value; // hidden이라는 class name을 추가해서 form을 숨겨주고
+  const username = loginInput.value;
   localStorage.setItem(USERNAME_KEY, username);
   paintGreetings(username);
 }
 
 function paintGreetings(username) {
   greeting.classList.remove(HIDDEN_CLASSNAME);
-  greeting.innerText = `Hello ${username}`;
+  greeting.innerText = `Hello! ${username}`;
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
