@@ -268,3 +268,20 @@ function saveToDos() {
 - 아직 해결되지 않은 문제점
   1. 새로고침을 했을 때 저장된 투두들을 보여주지 않음
   2. 새로고침할 때마다 todos 배열이 빈 배열로 초기화되기 때문에 새로고침 후에 투두를 계속 입력하면 전에 저장해놓은 투두들은 사라지고 새로고침 후에 적은 투두들이 덮어씌워짐
+
+### #7.4 Loading To Dos
+
+```js
+const savedToDos = localStorage.getItem(TODOS_KEY);
+console.log(savedToDos);
+
+if (savedToDos) {
+  const parsedToDos = JSON.parse(savedToDos);
+  toDos = parsedToDos;
+  parsedToDos.forEach(paintToDo);
+}
+```
+
+- 페이지가 로드될 때 실행된다. localStorage에 todos 가 저장되어있는지 확인 후 `JSON.parse()`를 사용해 문자열에서 배열로 바꿈
+- 문자열로 바꾼 배열을 forEach를 사용해 모든 item에 `paintToDo`에 넘겨주어 화면에도 표시
+- 매번 빈 배열로 초기화되는 toDos 배열 때문에 새로고침 후 새로운 투두를 넣으면 이전 투두들이 덮어쓰기 되어지는 문제를 해결하기 위해 `JSON.parse()`로 얻은 배열을 toDos 배열에 덮어쓰기 시켜서 페이지가 로드될 때마다 localStorage의 값을 가지고 있게함
