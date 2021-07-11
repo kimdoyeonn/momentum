@@ -302,3 +302,37 @@ function deleteToDo(event) {
 
 - [filter](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)를 사용하여 삭제 버튼이 눌린 todo를 제외한 배열을 새로 만들어서 toDos에 넣어줌
 - 새로 업데이트된 toDos를 localStorage에 저장
+
+## WEATHER
+
+### #8.0 Geolocation ~ #8.1 Weather API
+
+- `navigator.geolocation.getCurrentPosition(Ok, Error);`
+  - 현재 사용자의 위치를 받음
+  - 성공했을 경우 Ok 함수를 실행하면서 사용자의 위치를 인자로 같이 전달
+
+```js
+const weather = document.querySelector("#weather span:first-child");
+const city = document.querySelector("#weather span:last-child");
+const API_KEY = ...
+
+function onGeoOk(position) {
+  const lat = position.coords.latitude;
+  const lon = position.coords.longitude;
+  const url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      city.innerText = data.name;
+      weather.innerText = `${data.weather[0].main} / ${data.main.temp}`;
+    });
+}
+function onGeoError() {
+  alert("Can't find you. No weather for you.");
+}
+
+navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
+```
+
+- `fetch(url)`로 API 요청을 보냄
+- fetch는 promise라서 응답을 기다리지 않음, 응답을 기다린 후에 화면에 뿌려주기 위해 `.then(response => response.json())`으로 응답을 json 형식으로 리턴, 리턴받은 data의 구조를 확인하고 사용할 데이터를 가져와서 화면에 뿌려줌(`.then(data => {~~})`)
