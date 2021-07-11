@@ -250,3 +250,21 @@ function deleteToDo(event) {
 ```
 
 - 삭제 버튼이 클릭된 parentElement를 찾아서 삭제
+
+### #7.3 Saving To Dos
+
+```js
+const toDos = [];
+
+function saveToDos() {
+  localStorage.setItem("todos", JSON.stringify(toDos));
+}
+```
+
+- todo-list를 localStorage에 저장
+- todo-list는 배열을 생성해서 저장
+- localStorage에는 문자열만 저장할 수 있으므로 `JSON.stringify(Array)`를 사용하여 배열 형태의 문자열로 저장
+- `JSON.stringify()`를 하지 않고 저장할 경우 `todo,todo,todo` 형태의 한 문자열로 저장됨
+- 아직 해결되지 않은 문제점
+  1. 새로고침을 했을 때 저장된 투두들을 보여주지 않음
+  2. 새로고침할 때마다 todos 배열이 빈 배열로 초기화되기 때문에 새로고침 후에 투두를 계속 입력하면 전에 저장해놓은 투두들은 사라지고 새로고침 후에 적은 투두들이 덮어씌워짐
