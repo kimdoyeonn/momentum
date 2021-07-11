@@ -2,12 +2,12 @@
 
 ## Challenge CheckList
 
-- [ ] Clock.
-- [ ] Username (with localStorage).
-- [ ] To Do List (with localStorage)
-- [ ] Random Background Image.
-- [ ] Weather with Geolocation.
-- [ ] Make pretty CSS 💖
+- [x] Clock.
+- [x] Username (with localStorage).
+- [x] To Do List (with localStorage)
+- [x] Random Background Image.
+- [x] Weather with Geolocation.
+- [x] Make pretty CSS 💖
 
 ## LOGIN
 
