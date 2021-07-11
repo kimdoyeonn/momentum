@@ -237,3 +237,16 @@ function paintToDo(newTodo) {
 ```
 
 - input에 값을 입력하고 엔터를 눌렀을 때, input에서 값이 사라짐과 동시에 todo-list에 값이 `li span` 형태로 추가
+
+### #7.2 Deleting To Dos
+
+- 전 강의에서 만든 투두리스트에 투두와 같은 방식으로 삭제버튼도 추가
+
+```js
+function deleteToDo(event) {
+  const li = event.target.parentElement;
+  li.remove();
+}
+```
+
+- 삭제 버튼이 클릭된 parentElement를 찾아서 삭제
